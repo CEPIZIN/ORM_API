@@ -1,3 +1,4 @@
+const { where } = require('sequelize');
 const database = require('../models');
 
 class PeopleController {
@@ -10,6 +11,17 @@ class PeopleController {
             return res.status(500).json({ error: 'Internal Server Error' });
         }
     }
-}
+    static async GetIdPeople(req,res){
+        try{
+            const id = req.params.id;
+            const getById = await database.People.findOne({ where: { id } })
+            return res.status(200).json(getById)
+        }catch(Err){
+            console.log(Err)
+            return res.status(500).json({ error: 'Internal Server Error' });
+            }
+        }
+    }
+
 
 module.exports = PeopleController;

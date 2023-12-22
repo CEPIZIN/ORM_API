@@ -1,11 +1,11 @@
 //importar controller 
 const controller = require('./Controller.js')
-const CategoryService = require('../services/catgoryService.js')
+const CategoryService = require('../services/catgoryService')
 
 const categoryService= new CategoryService()
 class CategoryServiceController extends controller {
     constructor(){
-        super(CategoryService)
+        super(categoryService)
     }
     
 }

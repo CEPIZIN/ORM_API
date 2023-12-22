@@ -6,5 +6,4 @@ class RegisterService extends Services{
     }
 }
 
-
 module.exports = RegisterService

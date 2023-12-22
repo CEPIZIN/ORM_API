@@ -9,7 +9,10 @@ class Services{
     async GetAllRegister(){
         return dataSource[this.Model].findAll()
         }
-
+        
+    async GetById(id){
+        return dataSource[this.Model].findByPk(id)
+    }
     async updateRegister(DataUPdate, id ){
         const updateRegister= await dataSource[this.Model].update(DataUPdate,{
             where:{id:id}

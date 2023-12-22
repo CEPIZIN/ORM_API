@@ -8,7 +8,9 @@ module.exports = (sequelize) => {
         foreignKey: 'teacher_id'
       });
       People.hasMany(models.Register, {
-        foreignKey: 'student_id'
+        foreignKey: 'student_id',
+        scope:{status:'Enrolled' },
+        as: 'registeredClasses'
       });
     }
   }

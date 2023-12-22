@@ -20,7 +20,7 @@ module.exports = {
     course_id: {
         allowNull: false,
         type: Sequelize.INTEGER,
-        references: { model: 'Course', key: 'id' }
+        references: { model: 'Courses', key: 'id' }
     },
       createdAt: {
         allowNull: false,

@@ -5,10 +5,10 @@ class Controller{
     //findall 
     async getAll(req,res){
         try{
-            const getAllservices = await this.serviceEntity.GetAllRegiste()
+            const getAllservices = await this.serviceEntity.GetAllRegister()
             return res.status(200).json(getAllservices)
         }catch(Err){
-            //erro 
+            console.log(Err)
         }
       
     }

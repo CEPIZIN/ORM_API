@@ -14,9 +14,3 @@ class Services{
 module.exports = Services
 
 
-class eu {
-    constructor(minhapessoa){
-        this.nome 
-        this.idade
-    }
-}

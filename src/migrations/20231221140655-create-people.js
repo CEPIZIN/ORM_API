@@ -15,7 +15,7 @@ module.exports = {
       email: {
         type: Sequelize.STRING
       },
-      CPF: {
+      cpf: {
         type: Sequelize.STRING
       },
       active: {

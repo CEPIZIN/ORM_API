@@ -25,7 +25,7 @@ module.exports = {
       teacher_id: {
         allowNull: false,
         type: Sequelize.INTEGER,
-        references: { model: 'peoples ', key: 'id' }
+        references: { model: 'peoples', key: 'id' }
     },
      category_id: {
       allowNull: false,

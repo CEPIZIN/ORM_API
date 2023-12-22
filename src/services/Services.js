@@ -9,6 +9,17 @@ class Services{
     async GetAllRegister(){
         return dataSource[this.Model].findAll()
         }
+
+    async updateRegister(DataUPdate, id ){
+        const updateRegister= await dataSource[this.Model].update(DataUPdate,{
+            where:{id:id}
+            })
+
+        if(updateRegister[0] === 0){
+            return false
+            }
+        return true    
+    }
 }
 
 module.exports = Services

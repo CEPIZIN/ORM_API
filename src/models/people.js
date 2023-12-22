@@ -2,6 +2,8 @@
 const {
   Model
 } = require('sequelize');
+const course = require('./course');
+const { FOREIGNKEYS } = require('sequelize/types/query-types');
 module.exports = (sequelize, DataTypes) => {
   class People extends Model {
     /**
@@ -10,7 +12,12 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      People.hasMany(models.Course, 
+        {foreignKey: 'teacher_id'
+      })
+      People.hasMany(models.Register, 
+        {foreignKey: 'student_id'
+      })
     }
   }
   People.init({

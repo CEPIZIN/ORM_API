@@ -2,7 +2,7 @@ class Controller{
     constructor(serviceEntity){
         this.serviceEntity = serviceEntity
     }
-    //findall 
+   
     async getAll(req,res){
         try{
             const getAllservices = await this.serviceEntity.GetAllRegister()
@@ -11,6 +11,21 @@ class Controller{
             console.log(Err)
         }
       
+    }
+
+    async update( req,res){
+        try{
+            const {id} = req.params
+            const DataUpdate = req.body 
+
+            const isUpdate = this.serviceEntity.updateRegister(DataUpdate, Number(id))
+            if (!isUpdate){
+            return res.status(400).json({ mensagem: 'The record has not been updated.' });
+            } 
+            return res.status(200).json({mensagem: 'Updated successfully' }) 
+        }catch(Err){
+            console.log(Err)
+        }
     }
 }
 

@@ -1,8 +1,10 @@
 const Services = require('./Services.js')
 
 class PeopleService extends Services{
-    constructor(){
-        //esta pegando da classe pai 
+    constructor(){ 
         super('People')
     }
 }
+
+
+module.exports = PeopleService

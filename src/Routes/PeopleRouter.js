@@ -1,10 +1,10 @@
 const { Router } = require('express');
-const PeopleController = require('../controllers/PeopleController.js'); 
+const PeopleController = require('../controllers/PeopleController.js');
+
+const peopleController = new PeopleController(); 
 
 const router = Router();
 
-router
-    .get('/people', PeopleController.GetAllPeople)
-    .get('/people/:id', PeopleController.GetIdPeople)
+router.get('/people', (req, res) => peopleController.getAll(req, res)); 
 
 module.exports = router;

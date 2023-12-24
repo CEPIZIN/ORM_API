@@ -21,7 +21,15 @@ class Services{
         if(updateRegister[0] === 0){
             return false
             }
-        return true    
+        return true 
+    }
+    async postRegister(Data){
+        return dataSource[this.Model].create(Data) 
+
+    }
+
+    async deletRegister(id){
+        return dataSource[this.Model].destroy({ where: { id: id } });
     }
 }
 

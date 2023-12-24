@@ -2,6 +2,16 @@ class Controller{
     constructor(serviceEntity){
         this.serviceEntity = serviceEntity
     }
+
+    async create(req,res){
+        try{
+            const Data = req.body
+            const create = await this.serviceEntity.postRegister(Data)
+            return res.status(200).json(create)
+        }catch(Err){
+            console.log(Err)
+        }
+    }
    
     async getAll(req,res){
         try{

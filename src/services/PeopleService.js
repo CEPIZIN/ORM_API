@@ -10,6 +10,9 @@ class PeopleService extends Services{
         const listRegister = await student.GetRegisterByStudent()
         return listRegister
     }
+
+
+
 }
 
 

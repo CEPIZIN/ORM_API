@@ -13,8 +13,10 @@ class Services{
     async GetById(id){
         return dataSource[this.Model].findByPk(id)
     }
+
+    
     async updateRegister(DataUPdate, id ){
-        const updateRegister= await dataSource[this.Model].update(DataUPdate,{
+        const updateRegister=  dataSource[this.Model].update(DataUPdate,{
             where:{id:id}
             })
 
@@ -28,8 +30,10 @@ class Services{
 
     }
 
-    async deletRegister(id){
-        return dataSource[this.Model].destroy({ where: { id: id } });
+    async deleteRegister(id){
+        return dataSource[this.Model].destroy({ 
+            where: { id: id } 
+        });
     }
 }
 

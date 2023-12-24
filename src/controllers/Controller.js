@@ -23,16 +23,36 @@ class Controller{
       
     }
 
+    async GetDataByiD(req,res){
+        const {id} = req.params
+        try{
+            const data = await this.serviceEntity.GetById(Number(id))
+            return res.status(200).json(data)
+        }catch(Err){
+            //err
+        }
+    }
+
     async update( req,res){
         try{
             const {id} = req.params
             const DataUpdate = req.body 
 
-            const isUpdate = this.serviceEntity.updateRegister(DataUpdate, Number(id))
+            const isUpdate = await this.serviceEntity.updateRegister(DataUpdate, Number(id))
             if (!isUpdate){
             return res.status(400).json({ mensagem: 'The record has not been updated.' });
             } 
             return res.status(200).json({mensagem: 'Updated successfully' }) 
+        }catch(Err){
+            console.log(Err)
+        }
+    }
+
+    async deleteData(req,res){
+        const {id} = req.params
+        try{
+            const deletData = await this.serviceEntity.deleteRegister(id)
+            res.status(200).json({mensagem: 'successfully shut down.'})
         }catch(Err){
             console.log(Err)
         }

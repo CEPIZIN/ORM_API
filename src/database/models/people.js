@@ -24,7 +24,8 @@ module.exports = (sequelize) => {
   }, {
     sequelize,
     modelName: 'People',
-    tableName: 'peoples'
+    tableName: 'peoples',
+    paranoid:true
 
   });
 

@@ -20,7 +20,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Register',
-    tableName: 'Registers'
+    tableName: 'Registers',
+    paranoid:true
   });
 
   return Register;

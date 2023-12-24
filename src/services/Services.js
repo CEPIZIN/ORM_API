@@ -1,5 +1,5 @@
 
-const dataSource = require('../models')
+const dataSource = require('../database/models')
 
 class Services{
     constructor(nameModel){
@@ -14,7 +14,7 @@ class Services{
         return dataSource[this.Model].findByPk(id)
     }
 
-    
+
     async updateRegister(DataUPdate, id ){
         const updateRegister=  dataSource[this.Model].update(DataUPdate,{
             where:{id:id}

@@ -13,13 +13,11 @@ class PeopleController extends controller {
         try{
             const listRegister = await peopleService.GetRegisterByStudent( Number(student_id))
             return res.status(200).json(listRegister)
-        }catch{
-
+        }catch(Err){
+            return res.status (500).json({ erro: Err.message });
         }
 
     }
-
-
 }
 
 

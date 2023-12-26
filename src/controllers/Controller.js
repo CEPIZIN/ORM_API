@@ -10,7 +10,6 @@ class Controller{
             return res.status(200).json(create)
         }catch(Err){
             console.log(Err)
-            return res.status (500).json({ erro: Err.message });
         }
     }
    
@@ -20,7 +19,6 @@ class Controller{
             return res.status(200).json(getAllservices)
         }catch(Err){
             console.log(Err)
-            return res.status (500).json({ erro: Err.message });
         }
       
     }
@@ -31,7 +29,7 @@ class Controller{
             const data = await this.serviceEntity.GetById(Number(id))
             return res.status(200).json(data)
         }catch(Err){
-            return res.status (500).json({ erro: Err.message });
+            //err
         }
     }
 
